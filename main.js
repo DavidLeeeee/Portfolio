@@ -100,15 +100,30 @@ class Rock {
 }
 
 class Platform {
-  constructor(opacity) {
+  constructor(opacity, toOpacity) {
     this.opacity = opacity;
+    this.toOpacity = toOpacity;
+    this.fadeSpeed = 0.001; // 투명도 변화 속도
   }
+
   draw() {
-    // 검정색 사각형 그리기
-    ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity})`; // 검정색, 지정된 투명도
-    ctx.fillRect(0, 0, canvas.width, canvas.height); // 캔버스의 크기에 맞는 사각형 그리기
+    ctx.fillStyle = `rgba(0, 0, 0, ${this.opacity})`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
-  animate() {}
+
+  animate() {
+    if (this.opacity > this.toOpacity) {
+      this.opacity -= this.fadeSpeed;
+      if (this.opacity < this.toOpacity) {
+        this.opacity = this.toOpacity; // 목표 투명도 이하로 떨어지지 않도록 조절
+      }
+    } else {
+      this.opacity += this.fadeSpeed;
+      if (this.opacity > this.toOpacity) {
+        this.opacity = this.toOpacity; // 목표 투명도 이상으로 올라가지 않도록 조절
+      }
+    }
+  }
 }
 
 function init() {
@@ -139,12 +154,14 @@ function init() {
   }
 }
 
+const platform = new Platform(0.9, 0.1); // 투명도를 조절하여 Platform 생성
 function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   stars.forEach((stars) => stars.animate());
   rocks.forEach((rocks) => rocks.animate());
-  const platform = new Platform(0.3); // 투명도를 조절하여 Platform 생성
-  platform.draw(); // Platform 그리기
+  // Platform 인스턴스를 루프 밖으로 이동하고, 한 번만 생성하도록 수정해야 합니다.
+  platform.animate(); // 플랫폼의 투명도를 조절합니다.
+  platform.draw(); // 변경된 투명도로 플랫폼을 그립니다.션
   window.requestAnimationFrame(render);
 }
 window.addEventListener("resize", () => init());
