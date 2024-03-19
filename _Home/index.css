@@ -1,0 +1,26 @@
+#myCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#overlay {
+  background-color: rgba(9, 105, 105, 0.7);
+  border-radius: 30px;
+  border: 2px solid rgba(5, 8, 54, 0.5);
+  padding: 20px 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#overlay * {
+  color: rgba(255, 255, 255, 0.9);
+}
+#overlay h1 {
+  font-size: 26px;
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+}
+#overlay p {
+  font-size: 24px;
+}
