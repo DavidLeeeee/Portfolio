@@ -1,23 +1,23 @@
 // Define the texts for different stages
 const texts = [
   {
-    headline: "안녕하세요! 방문자님.",
-    description: "저의 `포트폴리오 유니버스`에 오신것을 환영합니다.",
+    headline: "안녕하세요! 확박사님님.",
+    description: "오늘도 여전히 딸딸이를 치시는군요.",
     skip: "Enter !",
   },
   {
-    headline: "좀 더 알아보고 싶으신가요?",
-    description: "그렇다면 속도를 좀 더 올려보도록 하죠.",
+    headline: "오늘은 무엇을 보고 치셨나요?",
+    description: "사쿠라 모모..? 아 이건 한박사님의 소유물이죠",
     skip: "Enter !",
   },
   {
-    headline: "자... 갑니다!",
-    description: "잘 잡으셔야해요!!",
+    headline: "자... 싸러 갑시다",
+    description: "당신의 정자를 분출하러",
     skip: "Enter !",
   },
   {
-    headline: "거의 도착했어요!!!",
-    description: "마지막 스퍼트를 올려보도록 하죠!",
+    headline: "황종민의 정자 : 아 태어난지 1일 됐는데",
+    description: "오늘도 또 휴지에 싸여 죽겠네",
     skip: "Enter !",
   },
   {
@@ -92,7 +92,7 @@ function Start() {
         clearInterval(interval); // Stop the interval
 
         setTimeout(() => {
-          window.location.href = "./_portfolio/portfolio.html";
+          window.location.href = "_portfolio/portfolio.html";
         }, 2000); //페이지 이동
       }
     }, 1000);
