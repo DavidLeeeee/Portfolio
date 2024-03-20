@@ -25,11 +25,11 @@ function drawAim() {
   );
   ctx.restore(); // 캔버스 상태 복원
 }
+
+// Update mouse position on mousemove event
 const mouse = document.getElementById("mouse");
 let mouseX = 0;
 let mouseY = 0;
-
-// Update mouse position on mousemove event
 canvas.addEventListener("mousemove", function (e) {
   var rect = canvas.getBoundingClientRect();
   mouseX = e.clientX - rect.left - 30;
@@ -41,6 +41,8 @@ let TOTAL;
 let stars = [];
 let rocks = [];
 let platform;
+let speedweight = 1;
+let speed = 2;
 
 function randomBetween(min, max) {
   return Math.random() * (max - min + 1) + min;
@@ -60,7 +62,10 @@ class Star {
     const { x, y, velocity, size, opacity } = this;
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.lineTo(x + velocity.x * 1 * size, y + velocity.y * 1 * size);
+    ctx.lineTo(
+      x + velocity.x * speedweight * size,
+      y + velocity.y * speedweight * size
+    );
     ctx.strokeStyle = `rgba(205, 158, 40, ${opacity})`;
     ctx.lineWidth = 0.5 * size;
     ctx.stroke();
@@ -136,6 +141,29 @@ class Rock {
   }
 }
 
+const createstarsandrock = (starcount, rockcount) => {
+  TOTAL = Math.floor((innerWidth * innerHeight) / starcount); //별 전체 개수 컨트롤
+  for (let i = 0; i < TOTAL; i++) {
+    const x = randomBetween(innerWidth / 2 - 20, innerWidth / 2 + 20);
+    const y = randomBetween(innerHeight / 2 - 20, innerHeight / 2 + 20);
+    const velocity = {
+      x: randomBetween(-speed, speed),
+      y: randomBetween(-speed + 1, speed - 1),
+    };
+    stars.push(new Star(x, y, velocity));
+  }
+  // ROCK 생성
+  for (let j = 0; j < rockcount; j++) {
+    const x = randomBetween(innerWidth / 2 - 20, innerWidth / 2 + 20);
+    const y = randomBetween(innerHeight / 2 - 20, innerHeight / 2 + 20);
+    const velocity = {
+      x: randomBetween(-4, 4),
+      y: randomBetween(-2, 2),
+    };
+    rocks.push(new Rock(x, y, velocity));
+  }
+};
+
 class Platform {
   constructor(opacity, toOpacity) {
     this.opacity = opacity;
@@ -169,31 +197,11 @@ class Platform {
 function init() {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
-  TOTAL = Math.floor((innerWidth * innerHeight) / 100000); //별 전체 개수 컨트롤
   stars = [];
   rocks = [];
-  platform = new Platform(0.4, 0.3);
-
+  platform = new Platform(1.0, 0.3);
+  createstarsandrock(100000, 5);
   // STAR 생성
-  for (let i = 0; i < TOTAL; i++) {
-    const x = randomBetween(innerWidth / 2 - 20, innerWidth / 2 + 20);
-    const y = randomBetween(innerHeight / 2 - 20, innerHeight / 2 + 20);
-    const velocity = {
-      x: randomBetween(-2, 2),
-      y: randomBetween(-1, 1),
-    };
-    stars.push(new Star(x, y, velocity));
-  }
-  // ROCK 생성
-  for (let j = 0; j < 6; j++) {
-    const x = randomBetween(innerWidth / 2 - 20, innerWidth / 2 + 20);
-    const y = randomBetween(innerHeight / 2 - 20, innerHeight / 2 + 20);
-    const velocity = {
-      x: randomBetween(-4, 4),
-      y: randomBetween(-2, 2),
-    };
-    rocks.push(new Rock(x, y, velocity));
-  }
 }
 
 function render() {
