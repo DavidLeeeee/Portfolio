@@ -1,28 +1,23 @@
 // Define the texts for different stages
 const texts = [
   {
-    headline: "안녕하세요! 확박사님님.",
-    description: "오늘도 여전히 딸딸이를 치시는군요.",
+    headline: "안녕하세요! 방문자님.",
+    description: "저의 포트폴리오 페이지에 오신 것을 환영합니다!!",
     skip: "Enter !",
   },
   {
-    headline: "오늘은 무엇을 보고 치셨나요?",
-    description: "사쿠라 모모..? 아 이건 한박사님의 소유물이죠",
+    headline: "저에 대해 알고싶다면 계속 나아가주세요!",
+    description: "속도를 더 올리겠습니다!",
     skip: "Enter !",
   },
   {
-    headline: "자... 싸러 갑시다",
-    description: "당신의 정자를 분출하러",
-    skip: "Enter !",
-  },
-  {
-    headline: "황종민의 정자 : 아 태어난지 1일 됐는데",
-    description: "오늘도 또 휴지에 싸여 죽겠네",
+    headline: "거의 도착했습니다!",
+    description: "속도를 좀 더 내볼까요?!",
     skip: "Enter !",
   },
   {
     headline: "목적지가 보입니다!",
-    description: "여기까지 오시느라 고생하셨습니다!",
+    description: "이제 저를 만나러 고고 ~ !",
     skip: "Enter !",
   },
   {},
@@ -33,7 +28,7 @@ const headlineElement = document.getElementById("headline");
 const descriptionElement = document.getElementById("description");
 const skipElement = document.getElementById("skip");
 const overlay = document.getElementById("overlay");
-const delay = 100;
+const delay = 100; //텍스트딜레이
 // 타이핑 애니메이션
 function typeWriter(text, element, delay) {
   let index = 0;
@@ -69,33 +64,34 @@ function textImporter() {
 
 // Process
 function Start() {
-  if (textIndex < 2) {
+  if (textIndex == 0) {
     overlay.style.display = "none";
     setTimeout(textImporter, 2000);
-  } else if (textIndex >= 2 && textIndex < 4) {
+  } else if (textIndex >= 1 && textIndex < 3) {
     overlay.style.display = "none";
     speedweight *= 2;
     speed = 4;
     createstarsandrock(10000, 10);
     setTimeout(textImporter, 2000);
-  } else if (textIndex == 4) {
+  } else if (textIndex == 3) {
     overlay.style.display = "none";
     createstarsandrock(10000, 20);
-    setTimeout(textImporter, 4000);
-  } else if (textIndex > 4) {
+    setTimeout(textImporter, 2000);
+  } else if (textIndex > 3) {
+    //빈배열
     overlay.style.display = "none";
     let counter = 0;
+
     const interval = setInterval(() => {
       createstarsandrock(5000, 120);
       counter++;
-      if (counter >= 10) {
+      if (counter >= 8) {
         clearInterval(interval); // Stop the interval
-
         setTimeout(() => {
-          window.location.href = "_portfolio/portfolio.html";
+          window.location.href = "portfolio/portfolio.html";
         }, 2000); //페이지 이동
       }
-    }, 1000);
+    }, 800);
   }
 }
 // Show the first text after a delay
