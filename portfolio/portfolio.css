@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto";
+}
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 15, 1) 25%,
+    rgba(0, 0, 20, 1) 50%,
+    rgba(0, 0, 15, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+#myCanvas2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(200, 200, 250, 0.1);
+  border-radius: 12px;
+  padding: 18px;
+  z-index: 2;
+}
+#innerbox {
+  background-color: rgba(255, 255, 255, 1);
+}
+#promptBox {
+  font-size: 12px;
+  color: aliceblue;
+  background-color: rgb(0, 0, 0);
+  height: 28px;
+  line-height: 28px;
+  padding: 0 16px;
+  margin: 20px 30px;
+}
+
+#optionList {
+  padding: 0px 10px 20px 10px;
+}
+#optionList li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+  background: linear-gradient(
+    90deg,
+    rgb(0, 190, 255) 0%,
+    rgba(0, 150, 255, 1) 25%,
+    rgba(0, 110, 255, 1) 50%,
+    rgba(0, 150, 255, 1) 75%,
+    rgba(0, 190, 255) 100%
+  );
+  background-size: 200% 100%;
+  transition: background-position, transform 0.5s;
+}
+#optionList li a:hover {
+  animation: movingGradient 3s linear infinite;
+  transform: scale(1.01);
+}
+
+#optionList li p {
+  font-size: 32px;
+  padding: 10px 50px 10px 20px;
+  margin-right: auto;
+  color: aliceblue;
+}
+#description {
+  font-size: 12px;
+  color: aliceblue;
+}
+#state {
+  margin: 0px 20px;
+  font-size: 30px;
+}
+
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}

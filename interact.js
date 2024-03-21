@@ -102,6 +102,9 @@ document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     Start();
   }
+  if (event.key === "Esc") {
+    window.location.href = "portfolio/portfolio.html";
+  }
   //마지막 텍스트가 나오면 스킵하도록
   if (skipElement.textContent.length >= texts[textIndex].skip.length) {
   }
