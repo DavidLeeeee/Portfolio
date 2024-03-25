@@ -53,7 +53,7 @@ setTimeout(() => {
   }
 
   window.requestAnimationFrame(step);
-}, 1000);
+}, 2000);
 
 function promptImporter(RandomText) {
   popupsounds();
@@ -80,7 +80,7 @@ function typeWriter(text, element, delay) {
 function popupsounds() {
   const popup = document.getElementById("popup");
   popup.volume = 0.05;
-  //popup.play();
+  popup.play();
 }
 
 // OptionText 배열을 기반으로 동적으로 아이템 추가

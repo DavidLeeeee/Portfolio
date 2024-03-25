@@ -9,8 +9,8 @@ let mouseX = 0;
 let mouseY = 0;
 const holoColors = [
   //green
-  "rgba(0, 125, 0, 0.9)",
-  "rgba(0, 85, 0, 0.9)",
+  "rgba(0, 5, 0, 0.9)",
+  "rgba(0, 55, 0, 0.9)",
   //blue
   "rgba(30, 55, 180, 0.9)",
   "rgba(0, 0, 120, 0.9)",
