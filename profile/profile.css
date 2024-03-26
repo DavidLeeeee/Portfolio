@@ -107,6 +107,9 @@ main {
   padding: 10px 20px;
   margin: 8px 0px;
 }
+.ContactBox i {
+  margin-top: 12px;
+}
 .ContactBox i:hover {
   transform: scale(1.2);
 }
@@ -169,6 +172,7 @@ main {
   font-size: 22px;
 }
 .thinkArticle img {
+  content-visibility: auto;
   transition: all 2s;
 }
 .thinkArticle img:first-of-type {

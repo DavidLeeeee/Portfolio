@@ -4,15 +4,31 @@ const ctx = canvas.getContext("2d"); //2D그래픽 컨텍스트 할당
 //svg파일 올리기
 const spaceshipImg = document.getElementById("spaceship");
 const aimImg = document.getElementById("aim");
+//SVG 가로세로비율 최적화
+
 function drawSpaceship() {
-  ctx.drawImage(spaceshipImg, 0, 0, innerWidth, innerHeight);
+  const canvasAspectRatio = canvas.width / canvas.height;
+  const svgAspectRatio = spaceshipImg.width / spaceshipImg.height;
+  let drawWidth, drawHeight;
+  if (canvasAspectRatio > svgAspectRatio) {
+    drawWidth = canvas.width;
+    drawHeight = canvas.width / svgAspectRatio;
+  } else {
+    drawWidth = canvas.height * svgAspectRatio;
+    drawHeight = canvas.height;
+  }
+  const drawX = (canvas.width - drawWidth) / 2;
+  const drawY = (canvas.height - drawHeight) / 2;
+  ctx.drawImage(spaceshipImg, drawX, drawY, drawWidth, drawHeight);
 }
 let aimAngle = 0;
+
 function drawAim() {
   aimAngle += 1;
   if (aimAngle >= 360) {
     aimAngle = 0;
   }
+
   ctx.save(); // 현재 캔버스 상태 저장
   ctx.translate(innerWidth / 2, innerHeight / 2); // 캔버스의 원점을 이미지 중심으로 이동
   ctx.rotate((aimAngle * Math.PI) / 180);
