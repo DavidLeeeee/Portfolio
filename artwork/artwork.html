@@ -4,9 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./artwork.css" />
+    <link rel="icon" href="../assets/icon.svg" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <title>Artworks</title>
   </head>
   <body>
-    zzzzzzzzz
+    <canvas id="myCanvas2"></canvas>
+    <audio id="popup" src="../sounds/Popup.mp3"></audio>
+    <div id="overlay">
+      <div id="innerbox">
+        <div id="promptBox"><p>Computer login...</p></div>
+        <ul id="optionList"></ul>
+        <ul id="artworks"></ul>
+      </div>
+    </div>
   </body>
+  <script type="text/javascript" src="interact_portfolio.js"></script>
+  <script type="text/javascript" src="canvas_portfolio.js"></script>
 </html>

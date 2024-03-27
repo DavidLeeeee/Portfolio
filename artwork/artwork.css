@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto";
+}
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  user-select: none;
+  background: linear-gradient(
+    180deg,
+    rgba(235, 235, 255, 1) 0%,
+    rgba(220, 220, 255, 1) 100%
+  );
+}
+#myCanvas2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#overlay {
+  height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(20, 20, 20, 0.5);
+  z-index: 2;
+  overflow: hidden;
+}
+#innerbox {
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.5);
+  transition: height 1s;
+}
+#promptBox {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0c0c0c;
+  background-color: rgba(255, 255, 255, 1);
+  height: 28px;
+  line-height: 30px;
+  padding: 0 16px; /* 안쪽 컨텐츠 */
+  margin: 20px 30px; /* 바깥 컨텐츠 */
+}
+
+#optionList {
+  padding: 0px 10px 20px 10px;
+}
+#optionList li div,
+#artworks li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px;
+}
+#optionList li:nth-child(1) div {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(50, 0, 0, 0.5) 90%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  transition: background-position, transform 0.5s;
+}
+#optionList li:nth-child(2) div {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 0, 50, 0.5) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  transition: background-position, transform 0.5s;
+}
+#optionList li:nth-child(3) div {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(70, 50, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  transition: background-position, transform 0.5s;
+}
+#optionList li:nth-child(4) div {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 60%,
+    rgba(0, 50, 0, 0.5) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  transition: background-position, transform 0.5s;
+}
+#optionList li div:hover {
+  animation: movingGradient 3s linear infinite;
+  transform: scale(1.01);
+}
+#optionList li:nth-child(1) p {
+  font-family: cursive;
+}
+#optionList li:nth-child(2) p {
+  font-family: "Palatino", Arial, sans-serif;
+}
+#optionList li:nth-child(3) p {
+  font-family: "Times New Roman", serif;
+}
+#optionList li:nth-child(4) p {
+  font-family: "Comic Sans MS", serif;
+}
+#optionList li p,
+#artworks li a {
+  font-size: 32px;
+  padding: 10px 0px 10px 24px;
+  margin-right: auto;
+  color: aliceblue;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#description {
+  font-size: 12px;
+  color: aliceblue;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 30px;
+}
+#state {
+  margin: 0px 20px;
+  font-size: 30px;
+}
+
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+#artworks {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 0 0px 12px 0px;
+  margin: 0 auto;
+}
+#artworks li {
+  margin: 0 0 20px 0;
+}
+#artworks li a {
+  width: 100%;
+  font-size: 22px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 25%,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 10, 20, 0.5) 75%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}

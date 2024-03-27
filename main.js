@@ -20,6 +20,7 @@ function drawSpaceship() {
   const drawX = (canvas.width - drawWidth) / 2;
   const drawY = (canvas.height - drawHeight) / 2;
   ctx.drawImage(spaceshipImg, drawX, drawY, drawWidth, drawHeight);
+  // ctx.drawImage(spaceshipImg, 0, 0, innerWidth, innerHeight);
 }
 let aimAngle = 0;
 
