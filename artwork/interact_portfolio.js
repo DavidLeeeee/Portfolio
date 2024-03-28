@@ -29,19 +29,25 @@ const ArtisticOptions = [
     title: "Firework",
     description: "불꽃놀이",
     state: "available",
-    link: "../profile/profile.html",
+    link: "artistic/firework/firework.html",
   },
   {
     title: "Pointillism",
     description: "점묘",
     state: "available",
-    link: "../profile/profile.html",
+    link: "artistic/pointillism/pointillism.html",
   },
   {
     title: "Ink",
     description: "잉크 넣기",
     state: "available",
-    link: "../profile/profile.html",
+    link: "../ink/ink.html",
+  },
+  {
+    title: "Curve's majestic",
+    description: "곡선의 미학",
+    state: "available",
+    link: "artistic/firework/firework.html",
   },
 ];
 const ScienceOptions = [
