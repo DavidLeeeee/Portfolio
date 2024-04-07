@@ -167,8 +167,8 @@ class Splash extends Firework {
 
   draw() {
     const { x, y } = this;
-    const ranx = randomBetween(-30, 30);
-    const rany = randomBetween(-30, 30);
+    const ranx = randomBetween(-15, 15);
+    const rany = randomBetween(-15, 15);
     for (let i = 0; i < this.lineLengths; i++) {
       this.drawLine(x, y, x + ranx, y + rany); // 오른쪽으로 뻗어나가는 직선
     }
@@ -177,7 +177,7 @@ class Splash extends Firework {
     this.draw();
     setTimeout(() => {
       removeFirework(this);
-    }, 1000);
+    }, 500);
   }
 }
 function removeFirework(fireworkToRemove) {
@@ -214,7 +214,7 @@ setInterval(createfirework, 200);
 function init() {
   canvas.width = innerWidth;
   canvas.height = innerHeight;
-  createfirework();
+  //createfirework();
 }
 
 function render() {

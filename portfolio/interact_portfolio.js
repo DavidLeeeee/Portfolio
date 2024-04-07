@@ -13,7 +13,7 @@ const OptionText = [
   },
   {
     title: "Artwork",
-    description: "개인 아트워크",
+    description: "아트워크/Study",
     state: "available",
     link: "../artwork/artwork.html",
   },

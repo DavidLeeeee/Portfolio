@@ -23,6 +23,12 @@ const OptionText = [
     state: "available",
     link: "AnimeOptions",
   },
+  {
+    title: "Study",
+    description: "",
+    state: "available",
+    link: "StudyOptions",
+  },
 ];
 const ArtisticOptions = [
   {
@@ -97,17 +103,13 @@ const AnimeOptions = [
     state: "available",
     link: "../profile/profile.html",
   },
+];
+const StudyOptions = [
   {
-    title: "Life",
-    description: "인생",
+    title: "Image",
+    description: "이미지",
     state: "available",
-    link: "../profile/profile.html",
-  },
-  {
-    title: "God's mean",
-    description: "신의 뜻",
-    state: "available",
-    link: "../profile/profile.html",
+    link: "./study/image/image.html",
   },
 ];
 const RandomText = [
@@ -229,6 +231,9 @@ const renderArtworks = () => {
         break;
       case "AnimeOptions":
         selectedArray = AnimeOptions;
+        break;
+      case "StudyOptions":
+        selectedArray = StudyOptions;
         break;
       default:
         renderOptions();

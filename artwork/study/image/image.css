@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+#sizingImg {
+  height: 1000px;
+}
+.selectBox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 150px;
+  height: 42px;
+  background-color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 4px 4px 0px 0;
+}
+.selectBox option:checked {
+  font-weight: bold;
+}
+.selectBox:focus {
+  outline: none;
+  border: 2px solid #000;
+}
+
+#vertical,
+#horizontal {
+  width: 300px;
+  height: 4px;
+  background-color: #222;
+  margin: 40px 0;
+  position: relative;
+}
+.controller {
+  width: 16px;
+  height: 16px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: -6px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+}
+.controller:hover {
+  transform: scale(1.2);
+}
+.controllerValue {
+  display: flex;
+  width: 300px;
+  padding-top: 8px;
+  justify-content: space-between;
+}
+
+#sized_Box2 img {
+  aspect-ratio: 1/ 1;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+th {
+  background-color: #f2f2f2;
+}
+td:first-child {
+  background-color: #f0f0f0;
+}
+.format {
+  background-color: #4caf50;
+  color: white;
+}
