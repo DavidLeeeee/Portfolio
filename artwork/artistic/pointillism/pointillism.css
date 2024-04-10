@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* 화면 높이에 맞추기 */
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* 스크롤 막기 */
+  user-select: none;
+}
+
+.image {
+  margin-left: 40px;
+  width: 200px;
+  background-color: rgba(10, 14, 24, 1);
+}
+.paper {
+  width: 60%;
+  height: auto;
+  background-color: aliceblue;
+  margin: 32px;
+}
+
+@media (max-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+    margin: 0;
+    height: 82px;
+  }
+  .paper {
+    width: 100%;
+    margin: 0;
+    height: 80%;
+  }
+  #imageSample img {
+    display: none;
+  }
+}
+
+.image form {
+  margin: 20px auto;
+  padding: 8px;
+  text-align: center;
+  background-color: #fff;
+  width: 80%;
+}
+
+.image form input[type="file"] {
+  display: none;
+}
+
+.image label::before {
+  content: "Upload Image";
+  display: block;
+  color: #777;
+}
+
+#imageSample {
+  width: 90%;
+  margin: 10px auto;
+}
+
+#imageSample img {
+  width: 100%;
+  height: auto; /* 이미지의 가로세로 비율 유지 */
+}
+
+.circle-container {
+  display: flex;
+  flex-wrap: wrap;
+}
