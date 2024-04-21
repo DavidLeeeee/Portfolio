@@ -16,9 +16,12 @@ body {
   background-color: rgba(10, 14, 24, 1);
 }
 .paper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 60%;
-  height: auto;
-  background-color: aliceblue;
+  max-width: 1000px;
+  overflow: hidden;
   margin: 32px;
 }
 

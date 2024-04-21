@@ -14,13 +14,13 @@ const OptionText = [
   {
     title: "Philosophy",
     description: "",
-    state: "available",
+    state: "unavailable",
     link: "PhilosophyOptions",
   },
   {
     title: "Anime",
     description: "",
-    state: "available",
+    state: "unavailable",
     link: "AnimeOptions",
   },
   {
@@ -43,66 +43,54 @@ const ArtisticOptions = [
     state: "available",
     link: "artistic/pointillism/pointillism.html",
   },
-  {
-    title: "Ink",
-    description: "잉크 넣기",
-    state: "available",
-    link: "../ink/ink.html",
-  },
-  {
-    title: "Curve's majestic",
-    description: "곡선의 미학",
-    state: "available",
-    link: "artistic/firework/firework.html",
-  },
 ];
 const ScienceOptions = [
-  {
-    title: "Gravity",
-    description: "중력",
-    state: "available",
-    link: "../profile/profile.html",
-  },
-  {
-    title: "Solar System",
-    description: "태양계",
-    state: "available",
-    link: "../profile/profile.html",
-  },
-  {
-    title: "Magnetic Field",
-    description: "자기장",
-    state: "available",
-    link: "../profile/profile.html",
-  },
+  // {
+  //   title: "Gravity",
+  //   description: "중력",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
+  // {
+  //   title: "Solar System",
+  //   description: "태양계",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
+  // {
+  //   title: "Magnetic Field",
+  //   description: "자기장",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
 ];
 const PhilosophyOptions = [
-  {
-    title: "Death",
-    description: "죽음",
-    state: "available",
-    link: "../profile/profile.html",
-  },
-  {
-    title: "Life",
-    description: "인생",
-    state: "available",
-    link: "../profile/profile.html",
-  },
-  {
-    title: "God's mean",
-    description: "신의 뜻",
-    state: "available",
-    link: "../profile/profile.html",
-  },
+  // {
+  //   title: "Death",
+  //   description: "죽음",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
+  // {
+  //   title: "Life",
+  //   description: "인생",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
+  // {
+  //   title: "God's mean",
+  //   description: "신의 뜻",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
 ];
 const AnimeOptions = [
-  {
-    title: "Dragonball",
-    description: "에네르기파",
-    state: "available",
-    link: "../profile/profile.html",
-  },
+  // {
+  //   title: "Dragonball",
+  //   description: "에네르기파",
+  //   state: "available",
+  //   link: "../profile/profile.html",
+  // },
 ];
 const StudyOptions = [
   {

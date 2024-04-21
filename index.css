@@ -55,3 +55,19 @@ body {
   text-align: end;
   text-decoration: underline;
 }
+
+#escapeBox {
+  position: absolute;
+  top: 0;
+  right: 32px;
+  padding: 4px 10px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: aliceblue;
+  pointer-events: none;
+  font-size: 24px;
+}
+#escapeBox kbd {
+  padding: 0 8px;
+  background-color: rgba(20, 20, 50, 0.5);
+}

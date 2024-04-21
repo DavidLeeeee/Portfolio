@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+.shifter {
+  z-index: 999;
+  position: fixed;
+  top: 50%;
+  transform: translate(0%, -50%);
+  width: 44px;
+  height: 320px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shifter:nth-child(3) {
+  left: 0;
+}
+.shifter:nth-child(4) {
+  right: 0;
+}
+
+#cardnews {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: scroll;
+}
+#cardnews::-webkit-scrollbar {
+  display: none;
+}
+
+#cardnews article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0 0 auto; /* article 요소들이 자동으로 크기 조정되지 않도록 설정 */
+  width: 300px;
+  height: 400px;
+  margin: 0 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 0.4s;
+}
+#cardnews article:first-child {
+  margin-left: 32px;
+}
+#cardnews article:last-child {
+  margin-right: 32px;
+}
+@media (min-width: 1025px) {
+  #cardnews article:hover {
+    width: 330px;
+    height: 440px;
+  }
+  #cardnews article:hover h1 {
+    font-size: 30px;
+  }
+  #cardnews article:hover .innerContent {
+    width: 310px;
+    height: 320px;
+  }
+}
+
+#cardnews article h1 {
+  height: 10%;
+  text-align: center;
+  line-height: 40px;
+  color: rgb(250, 250, 250);
+  font-family: "TheGoodMonolith", sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  transition: all 0.3s;
+}
+
+.innerContent {
+  width: 280px;
+  height: 300px;
+  background-color: rgba(250, 250, 250, 0.95);
+  transition: all 0.4s;
+  position: relative;
+}
+
+.innerContent h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  margin-bottom: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 30, 0);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #cardnews {
+    height: 840px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1fr 1fr;
+  }
+  #cardnews article:nth-child(2) {
+    justify-self: end; /* 2번째 그리드 아이템을 좌측으로 정렬합니다. */
+  }
+  #cardnews article:hover {
+    background-color: rgba(10, 10, 10, 0.9);
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #cardnews {
+    display: flex;
+    height: auto;
+  }
+  #cardnews article {
+    margin: 10px 20px;
+  }
+  .shifter {
+    z-index: 999;
+    margin-top: 240px;
+    width: 50%;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+/* 
+#cardnews article {
+  flex: 0 0 auto; 
+  margin-right: 20px; 
+}
+#cardnews article:last-child {
+  margin-right: 0; 
+} */
